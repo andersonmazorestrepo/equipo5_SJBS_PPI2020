@@ -9,7 +9,9 @@ CREATE TABLE USUARIOE(
     telefono VARCHAR (20) NOT NULL,
     direccion VARCHAR (50) NOT NULL,
     correo VARCHAR (50) NOT NULL,
-    contraseña VARCHAR (50) NOT NULL
+    contraseña VARCHAR (50) NOT NULL,
+    ID_Tipo int NOT NULL,
+    FOREIGN KEY (ID_Tipo) REFERENCES TIPO_USUARIO(ID)
     );
 
 select*from USUARIO;
@@ -24,8 +26,8 @@ select*from RECICLAJE;
 
 CREATE TABLE TIPO_USUARIO(
    ID int PRIMARY KEY NOT NULL,
-   nombre VARCHAR (20) NOT NULL,
-   FOREIGN KEY (ID_USUARIO) REFERENCES USUARIO (ID),
+   nombre VARCHAR (20) NOT NULL
+   
 
    
     );
