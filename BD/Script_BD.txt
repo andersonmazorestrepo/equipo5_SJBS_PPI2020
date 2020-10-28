@@ -1,0 +1,76 @@
+USE  bpo2jcwfbbkxq4shm4gb;
+
+
+//CREACIÓN DE TABLAS
+
+CREATE TABLE USUARIOE(
+    ID int PRIMARY KEY NOT NULL,
+    nombre_completo VARCHAR (50) NOT NULL,
+    telefono VARCHAR (20) NOT NULL,
+    direccion VARCHAR (50) NOT NULL,
+    correo VARCHAR (50) NOT NULL,
+    contraseña VARCHAR (50) NOT NULL
+    );
+
+select*from USUARIO;
+
+CREATE TABLE RECICLAJE(
+    composicion int PRIMARY KEY NOT NULL,
+    fuente VARCHAR (50) NOT NULL,
+    cantidad VARCHAR (20) NOT NULL
+    );
+
+select*from RECICLAJE;
+
+CREATE TABLE TIPO_USUARIO(
+   ID int PRIMARY KEY NOT NULL,
+   nombre VARCHAR (20) NOT NULL,
+   FOREIGN KEY (ID_USUARIO) REFERENCES USUARIO (ID),
+
+   
+    );
+
+SELECT * FROM TIPO_USUARIO;
+
+
+CREATE TABLE MAPA(
+    rut int PRIMARY KEY NOT NULL,
+    rango VARCHAR (20) NOT NULL,
+    direccion VARCHAR (50) NOT NULL
+    );
+
+SELECT * FROM MAPA;
+
+
+//INSERSION DE DATOS 
+
+insert into USUARIOE (direccion,nombre_completo,ID,telefono,contraseña,correo)
+values( 'cr 43# 43-20', 'Sofia Gonzales',658935 ,'4656556','123456','sofigonza@gmail.com');
+
+
+insert into RECICLAJE (composicion,fuente,cantidad)
+VALUES (1,'Quimico','5 kl.');
+
+
+insert into TIPO_USUARIOE (ID_USUARIO,ID,nombre)
+VALUES (658935,4684163,'Sofia Gonzales');
+
+
+insert into MAPA (rut,rango,direccion)
+VALUES (658935,'1 k/m','cr 43# 43-20');
+
+
+insert into USUARIOE (direccion,nombre_completo,ID,telefono,contraseña,correo)
+values( 'cr 48# 70-20', 'Andres Montoya',658936 ,'4656557','456789','andremonto@gmail.com');
+
+
+insert into RECICLAJE (composicion,fuente,cantidad)
+VALUES (carton,'Biologico','9 kl.');
+
+
+insert into TIPO_USUARIOE (ID_USUARIO,ID,nombre)
+VALUES (658936,7984796,'Andres Montoya');
+
+
+insert into MAPA (rut,rango,direccion)
+VALUES (658936,'0.5 k/m','cr 48# 70-20');
